@@ -1,0 +1,41 @@
+@import '../styles/custom_variables';
+
+.jumbotron {
+  margin-top: 100px;
+  text-align: center;
+
+  @media screen and (min-width: 768px) {
+    margin-top: 160px;
+    text-align: left;
+  }
+
+  h1 {
+    font-size: 72px;
+    color: $mine-shaft;
+    font-weight: 600;
+    margin-bottom: 24px;
+  }
+
+  h2 {
+    font-size: 26px;
+    color: $scorpion;
+    display: inline-block;
+    clear: both;
+    font-weight: 300;
+    margin-top: 24px;
+    margin-bottom: 0;
+  }
+
+  .separator {
+    background-color: $cornflower-blue;
+    width: 100px;
+    height: 10px;
+    clear: both;
+    display: block;
+    margin: 0 auto;
+
+    @media screen and (min-width: 768px) {
+      margin: 0;
+    }
+  }
+}

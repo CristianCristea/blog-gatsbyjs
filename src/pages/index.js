@@ -1,18 +1,17 @@
 import React from 'react';
-import { Link } from 'gatsby';
 import Layout from '../components/layout';
 import Head from '../components/head';
+import Jumbotron from '../components/jumbotron';
+
+import '../styles/index.scss';
 
 // markup
 const IndexPage = () => {
   return (
-    <main>
-      <Layout>
-        <Head title='Home' />
-        <h1>Hello world</h1>
-        <Link to='/blog'>Blog</Link>
-      </Layout>
-    </main>
+    <Layout>
+      <Head title='Home' />
+      <Jumbotron />
+    </Layout>
   );
 };
 

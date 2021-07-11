@@ -1,0 +1,204 @@
+@import '../styles/custom_variables';
+.show-block {
+  display: block !important;
+  transition: all 0.4s;
+}
+
+.main-nav {
+  width: 100%;
+  background-color: $cornflower-blue;
+  min-height: 70px;
+
+  .dropdown {
+    display: none;
+    width: 100%;
+    padding-top: 64px;
+
+    @media screen and (min-width: 768px) {
+      display: flex;
+      flex-direction: row;
+      user-select: space-between;
+      padding-top: 0;
+
+      .menu {
+        flex: 2 0px;
+        display: flex;
+        justify-content: flex-start;
+
+        li {
+          padding: 0 20px;
+        }
+      }
+
+      .social-icons {
+        flex: 1 0px;
+        justify-content: flex-end;
+      }
+    }
+  }
+
+  #nav-icon {
+    width: 36px;
+    height: 45px;
+    position: absolute;
+    top: 20px;
+    left: 84%;
+    margin: 0 auto;
+    z-index: 100;
+
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.5s ease-in-out;
+    -moz-transition: 0.5s ease-in-out;
+    -o-transition: 0.5s ease-in-out;
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+
+    @media screen and (min-width: 768px) {
+      display: none;
+    }
+  }
+
+  #nav-icon span {
+    display: block;
+    position: absolute;
+    height: 4px;
+    width: 50%;
+    background: $white;
+    opacity: 1;
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg);
+    -webkit-transition: 0.25s ease-in-out;
+    -moz-transition: 0.25s ease-in-out;
+    -o-transition: 0.25s ease-in-out;
+    transition: 0.25s ease-in-out;
+  }
+
+  #nav-icon span:nth-child(even) {
+    left: 50%;
+    border-radius: 0 9px 9px 0;
+  }
+
+  #nav-icon span:nth-child(odd) {
+    left: 0px;
+    border-radius: 9px 0 0 9px;
+  }
+
+  #nav-icon span:nth-child(1),
+  #nav-icon span:nth-child(2) {
+    top: 0px;
+  }
+
+  #nav-icon span:nth-child(3),
+  #nav-icon span:nth-child(4) {
+    top: 10px;
+  }
+
+  #nav-icon span:nth-child(5),
+  #nav-icon span:nth-child(6) {
+    top: 20px;
+  }
+
+  #nav-icon.open span:nth-child(1),
+  #nav-icon.open span:nth-child(6) {
+    -webkit-transform: rotate(45deg);
+    -moz-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }
+
+  #nav-icon.open span:nth-child(2),
+  #nav-icon.open span:nth-child(5) {
+    -webkit-transform: rotate(-45deg);
+    -moz-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+  }
+
+  #nav-icon.open span:nth-child(1) {
+    left: 5px;
+    top: 7px;
+  }
+
+  #nav-icon.open span:nth-child(2) {
+    left: calc(50% - 5px);
+    top: 7px;
+  }
+
+  #nav-icon.open span:nth-child(3) {
+    left: -50%;
+    opacity: 0;
+  }
+
+  #nav-icon.open span:nth-child(4) {
+    left: 100%;
+    opacity: 0;
+  }
+
+  #nav-icon.open span:nth-child(5) {
+    left: 4px;
+    top: 17px;
+  }
+
+  #nav-icon.open span:nth-child(6) {
+    left: calc(50% - 4px);
+    top: 17px;
+  }
+
+  ul.menu {
+    width: 100%;
+    text-align: center;
+
+    li {
+      display: block;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+      transition: background-color 0.4s;
+
+      &:first-of-type {
+        border-top: 1px solid rgba(255, 255, 255, 0.4);
+      }
+
+      &:hover {
+        background-color: lighten($cornflower-blue, 5%);
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+        font-size: $medium;
+        line-height: 2.8em;
+        display: block;
+      }
+    }
+  }
+
+  ul.social-icons {
+    width: 100%;
+    text-align: center;
+
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    li {
+      display: block;
+      padding: 0 20px;
+
+      &:hover {
+        background-color: lighten($cornflower-blue, 5%);
+      }
+
+      a {
+        text-decoration: none;
+        color: $white;
+        font-size: $medium;
+        line-height: 2.8em;
+        display: block;
+      }
+    }
+  }
+}

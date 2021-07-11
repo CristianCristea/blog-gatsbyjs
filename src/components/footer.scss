@@ -1,0 +1,13 @@
+@import '../styles/custom_variables';
+
+footer {
+  background-color: $cornflower-blue;
+  text-align: center;
+  color: $white;
+  padding: 1em;
+  margin-top: 2.4%;
+
+  p {
+    margin: 0;
+  }
+}

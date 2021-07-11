@@ -1,2 +1,21 @@
-@import './variables';
+@import './custom_variables';
 @import '~bootstrap/scss/bootstrap';
+
+// Typo
+body {
+  font-family: 'Montserrat', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+}
+
+// General
+body {
+  background-color: $alabaster;
+  // padding: 0;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}

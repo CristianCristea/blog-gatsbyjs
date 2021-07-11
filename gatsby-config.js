@@ -1,8 +1,9 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'confident-mestorf-a96039.netlify.app',
+    siteUrl: 'https://confident-mestorf-a96039.netlify.app/',
     title: 'cristiancristea.dev',
     author: 'Cristian Cristea',
+    job: 'Full Stack Web Developer',
   },
   plugins: [
     'gatsby-plugin-sass',
