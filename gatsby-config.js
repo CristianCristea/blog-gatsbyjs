@@ -1,6 +1,6 @@
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://www.yourdomain.tld',
+    siteUrl: 'confident-mestorf-a96039.netlify.app',
     title: 'cristiancristea.dev',
     author: 'Cristian Cristea',
   },
