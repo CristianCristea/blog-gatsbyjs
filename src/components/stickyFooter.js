@@ -1,12 +1,12 @@
 import React from 'react';
 import './footer.scss';
 
-const Footer = () => {
+const StickyFooter = () => {
   return (
-    <footer>
+    <footer className='footer mt-auto'>
       <p className='text-small'>All rights reserved Cristian Cristea &copy;</p>
     </footer>
   );
 };
 
-export default Footer;
+export default StickyFooter;

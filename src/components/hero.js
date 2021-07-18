@@ -1,8 +1,8 @@
 import React from 'react';
 import { useStaticQuery, graphql } from 'gatsby';
-import './jumbotron.scss';
+import './hero.scss';
 
-const Jumbotron = () => {
+const Hero = () => {
   const data = useStaticQuery(graphql`
     query {
       site {
@@ -15,7 +15,7 @@ const Jumbotron = () => {
   `);
 
   return (
-    <div className='jumbotron'>
+    <div className='hero'>
       <div className='container'>
         <h1>{data.site.siteMetadata.author}</h1>
         <span className='separator'></span>
@@ -25,4 +25,4 @@ const Jumbotron = () => {
   );
 };
 
-export default Jumbotron;
+export default Hero;
