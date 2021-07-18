@@ -55,5 +55,41 @@ module.exports = {
         path: `${__dirname}/src/`,
       },
     },
+    {
+      resolve: 'gatsby-plugin-local-search',
+      options: {
+        name: 'pages',
+        engine: 'flexsearch',
+        query: `query {
+                  allMarkdownRemark {
+                    edges {
+                      node {
+                        frontmatter {
+                          tags
+                          title
+                          date
+                        }
+                        excerpt
+                        id
+                        fields {
+                          slug
+                        }
+                      }
+                    }
+                  }
+                }`,
+        ref: 'id',
+        index: ['title', 'excerpt'],
+        store: ['title', 'excerpt', 'date', 'slug', 'id'],
+        normalizer: ({ data }) =>
+          data.allMarkdownRemark.edges.map((edge) => ({
+            id: edge.node.id,
+            title: edge.node.frontmatter.title,
+            excerpt: edge.node.excerpt,
+            date: edge.node.frontmatter.date,
+            slug: edge.node.fields.slug,
+          })),
+      },
+    },
   ],
 };
