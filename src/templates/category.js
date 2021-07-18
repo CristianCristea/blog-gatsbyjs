@@ -3,6 +3,7 @@ import { graphql, Link, navigate } from 'gatsby';
 import Head from '../components/head';
 import Layout from '../components/layout';
 import Sidebar from '../components/sidebar';
+import * as categoryStyles from './category.module.scss';
 
 export const query = graphql`
   query ($category: String!) {
@@ -38,14 +39,14 @@ const Category = (props) => {
         <div className='d-flex'>
           <Sidebar />
           <div className='content p-5'>
-            <h2>{categoryTitle}</h2>
+            <h2 className='mb-5'>{categoryTitle}</h2>
             <ul className='m-0 p-0'>
               {props.data.allMarkdownRemark.edges.map((edge) => {
                 return (
                   <li key={edge.node.id}>
                     <Link
                       to={`/blog/${edge.node.fields.slug}`}
-                      className='mb-3 d-inline-block'
+                      className={`${categoryStyles.link} mb-3 d-inline-block`}
                     >
                       {edge.node.frontmatter.title}
                     </Link>

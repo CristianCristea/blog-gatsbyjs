@@ -30,14 +30,6 @@ const BlogPage = () => {
     }
   `);
 
-  const sidebarLinks = [
-    ...new Set(
-      data.allMarkdownRemark.edges.map((edge) =>
-        edge.node.frontmatter.category.toLowerCase()
-      )
-    ),
-  ];
-
   return (
     <Layout>
       <Head title='Blog' />
@@ -51,7 +43,7 @@ const BlogPage = () => {
                   <li key={edge.node.id}>
                     <Link
                       to={`/blog/${edge.node.fields.slug}`}
-                      className='mb-3 d-inline-block'
+                      className={`${blogStyles.link} mb-3 d-inline-block`}
                     >
                       {edge.node.frontmatter.title}
                     </Link>
