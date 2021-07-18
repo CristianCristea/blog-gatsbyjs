@@ -27,7 +27,6 @@ export const query = graphql`
 `;
 
 const Category = (props) => {
-  console.log(props.data);
   const categoryTitle =
     props.data.allMarkdownRemark.edges[0].node.frontmatter.category;
 
