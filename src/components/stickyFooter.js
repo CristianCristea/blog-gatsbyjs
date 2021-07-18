@@ -1,9 +1,9 @@
 import React from 'react';
-import './footer.scss';
+import * as footerStyles from './footerStyles.module.scss';
 
 const StickyFooter = () => {
   return (
-    <footer className='footer mt-auto'>
+    <footer className={`${footerStyles.footer} mt-auto`}>
       <p className='text-small'>All rights reserved Cristian Cristea &copy;</p>
     </footer>
   );
