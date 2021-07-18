@@ -1,5 +1,5 @@
 import React from 'react';
-import { graphql } from 'gatsby';
+import { graphql, navigate } from 'gatsby';
 import Head from '../components/head';
 import Layout from '../components/layout';
 
@@ -20,10 +20,24 @@ const Blog = (props) => {
   return (
     <Layout>
       <Head title={title} />
-      <h1>{title}</h1>
-      <div
-        dangerouslySetInnerHTML={{ __html: props.data.markdownRemark.html }}
-      />
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-3'>Sidebar</div>
+          <div className='col-9'>
+            <div
+              dangerouslySetInnerHTML={{
+                __html: props.data.markdownRemark.html,
+              }}
+            />
+          </div>
+        </div>
+        <button
+          className='btn btn-primary text-white'
+          onClick={() => navigate(-1)}
+        >
+          Back
+        </button>
+      </div>
     </Layout>
   );
 };

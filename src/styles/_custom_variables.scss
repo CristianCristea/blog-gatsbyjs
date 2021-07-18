@@ -1,4 +1,5 @@
-$blue: #0d6efd;
+$blue: #2098d1;
+$blue-second: #0d6efd;
 $indigo: #6610f2;
 $purple: #6f42c1;
 $pink: #d63384;
@@ -10,7 +11,7 @@ $teal: #20c997;
 $cyan: #0dcaf0;
 
 $primary: $blue;
-// $secondary: $gray-600;
+$secondary: $blue-second;
 $success: $green;
 $info: $cyan;
 $warning: $yellow;
@@ -21,7 +22,7 @@ $danger: $red;
 // Custom
 // colors
 $white: #fff;
-$black: #212121;
+$black: #212529;
 $cornflower-blue: rgba(32, 152, 209, 1);
 $alabaster: #fafafa;
 $mine-shaft: #212121;

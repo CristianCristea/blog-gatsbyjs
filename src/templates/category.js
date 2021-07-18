@@ -1,0 +1,66 @@
+import React from 'react';
+import { graphql, Link, navigate } from 'gatsby';
+import Head from '../components/head';
+import Layout from '../components/layout';
+
+export const query = graphql`
+  query ($category: String!) {
+    allMarkdownRemark(filter: { fields: { category: { eq: $category } } }) {
+      edges {
+        node {
+          id
+          html
+          frontmatter {
+            title
+            tags
+            date
+            category
+          }
+          fields {
+            slug
+            category
+          }
+        }
+      }
+    }
+  }
+`;
+
+const Category = (props) => {
+  console.log(props.data);
+  const categoryTitle =
+    props.data.allMarkdownRemark.edges[0].node.frontmatter.category;
+
+  return (
+    <Layout>
+      <Head />
+      <div className='container-fluid'>
+        <div className='row'>
+          <div className='col-3'>Sidebar</div>
+          <div className='col-9'>
+            <h2>{categoryTitle}</h2>
+            <ul className='m-0 p-0'>
+              {props.data.allMarkdownRemark.edges.map((edge) => {
+                return (
+                  <li key={edge.node.id}>
+                    <Link to={`/blog/${edge.node.fields.slug}`}>
+                      {edge.node.frontmatter.title}
+                    </Link>
+                  </li>
+                );
+              })}
+            </ul>
+            <button
+              className='btn btn-primary text-white'
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  );
+};
+
+export default Category;

@@ -1,6 +1,8 @@
 ---
 title: 'React post'
 date: '2021-01-01'
+category: 'JavaScript'
+tags: 'js react'
 ---
 
 ## Secondary Title

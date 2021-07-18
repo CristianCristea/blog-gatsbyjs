@@ -1,6 +1,8 @@
 ---
 title: 'Gatsby post'
 date: '2021-02-01'
+category: 'JavaScript'
+tags: 'js gatsby'
 ---
 
 ## Secondary Title Gatsby
