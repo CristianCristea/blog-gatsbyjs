@@ -6,6 +6,9 @@ const Layout = (props) => {
   return (
     <main>
       <Header />
+      <section className='search'>
+        <input type='text' value='SEarch' className='w-100' />
+      </section>
       {props.children}
       <Footer />
     </main>

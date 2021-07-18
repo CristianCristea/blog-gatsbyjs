@@ -43,7 +43,10 @@ const Category = (props) => {
               {props.data.allMarkdownRemark.edges.map((edge) => {
                 return (
                   <li key={edge.node.id}>
-                    <Link to={`/blog/${edge.node.fields.slug}`}>
+                    <Link
+                      to={`/blog/${edge.node.fields.slug}`}
+                      className='mb-3 d-inline-block'
+                    >
                       {edge.node.frontmatter.title}
                     </Link>
                   </li>
