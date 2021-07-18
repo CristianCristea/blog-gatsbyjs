@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, Link, navigate } from 'gatsby';
 import Head from '../components/head';
 import Layout from '../components/layout';
+import Sidebar from '../components/sidebar';
 
 export const query = graphql`
   query ($category: String!) {
@@ -35,7 +36,9 @@ const Category = (props) => {
       <Head />
       <div className='container-fluid'>
         <div className='row'>
-          <div className='col-3'>Sidebar</div>
+          <div className='col-3'>
+            <Sidebar />
+          </div>
           <div className='col-9'>
             <h2>{categoryTitle}</h2>
             <ul className='m-0 p-0'>

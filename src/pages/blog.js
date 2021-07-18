@@ -3,6 +3,7 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 
 import Layout from '../components/layout';
 import Head from '../components/head';
+import Sidebar from '../components/sidebar';
 
 const BlogPage = () => {
   const data = useStaticQuery(graphql`
@@ -42,17 +43,7 @@ const BlogPage = () => {
       <div className='container-fluid'>
         <div className='row'>
           <div className='col-12 col-md-2'>
-            <ul className='m-0 p-0'>
-              {sidebarLinks.map((sidebarLink) => {
-                return (
-                  <li key={sidebarLink}>
-                    <Link to={`/category/${sidebarLink}`}>
-                      <h2>{sidebarLink}</h2>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
+            <Sidebar />
           </div>
           <div className='col-12 col-md-10'>
             <ul className='m-0 p-0'>

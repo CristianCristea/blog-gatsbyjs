@@ -2,6 +2,7 @@ import React from 'react';
 import { graphql, navigate } from 'gatsby';
 import Head from '../components/head';
 import Layout from '../components/layout';
+import Sidebar from '../components/sidebar';
 
 export const query = graphql`
   query ($slug: String!) {
@@ -22,7 +23,9 @@ const Blog = (props) => {
       <Head title={title} />
       <div className='container-fluid'>
         <div className='row'>
-          <div className='col-3'>Sidebar</div>
+          <div className='col-3'>
+            <Sidebar />
+          </div>
           <div className='col-9'>
             <div
               dangerouslySetInnerHTML={{
