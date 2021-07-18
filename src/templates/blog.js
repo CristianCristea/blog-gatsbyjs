@@ -22,24 +22,22 @@ const Blog = (props) => {
     <Layout>
       <Head title={title} />
       <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-3'>
-            <Sidebar />
-          </div>
-          <div className='col-9'>
+        <div className='d-flex'>
+          <Sidebar />
+          <div className='content p-5'>
             <div
               dangerouslySetInnerHTML={{
                 __html: props.data.markdownRemark.html,
               }}
             />
+            <button
+              className='btn btn-primary text-white'
+              onClick={() => navigate(-1)}
+            >
+              Back
+            </button>
           </div>
         </div>
-        <button
-          className='btn btn-primary text-white'
-          onClick={() => navigate(-1)}
-        >
-          Back
-        </button>
       </div>
     </Layout>
   );

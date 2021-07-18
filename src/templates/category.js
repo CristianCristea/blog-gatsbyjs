@@ -35,11 +35,9 @@ const Category = (props) => {
     <Layout>
       <Head />
       <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-3'>
-            <Sidebar />
-          </div>
-          <div className='col-9'>
+        <div className='d-flex'>
+          <Sidebar />
+          <div className='content p-5'>
             <h2>{categoryTitle}</h2>
             <ul className='m-0 p-0'>
               {props.data.allMarkdownRemark.edges.map((edge) => {

@@ -41,11 +41,9 @@ const BlogPage = () => {
     <Layout>
       <Head title='Blog' />
       <div className='container-fluid'>
-        <div className='row'>
-          <div className='col-12 col-md-2'>
-            <Sidebar />
-          </div>
-          <div className='col-12 col-md-10'>
+        <div className='d-flex'>
+          <Sidebar />
+          <div className='content p-5'>
             <ul className='m-0 p-0'>
               {data.allMarkdownRemark.edges.map((edge) => {
                 return (

@@ -33,6 +33,7 @@ const Sidebar = () => {
               <Link
                 to={`/category/${sidebarLink}`}
                 className={sidebarStyles.link}
+                activeClassName={`${sidebarStyles.active}`}
               >
                 {sidebarLink}
               </Link>
